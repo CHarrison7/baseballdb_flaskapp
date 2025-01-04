@@ -6,10 +6,10 @@ services:
     container_name: mysql-container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root   # Root password
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}  # Root password
       MYSQL_DATABASE: my_database         # Default database name
       MYSQL_USER: user                    # Custom user name
-      MYSQL_PASSWORD: user        # Custom user password
+      MYSQL_PASSWORD: ${DB_USER_PASSWORD}        # Custom user password
     ports:
       - "3306:3306"                       # Map the container's MySQL port to the host
     volumes:
