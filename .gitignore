@@ -1,0 +1,58 @@
+# ?
+
+
+# Byte-compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment directories
+venv/
+env/
+.flaskenv
+
+# Flask instance and static files
+instance/
+*.sqlite3
+*.db
+*.bak
+
+# Logs
+*.log
+*.out
+*.err
+
+# IDE-specific files (PyCharm, etc.)
+.idea/
+*.iml
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.tox/
+coverage/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# Package files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Deployment files
+*.env
+.env.*
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Generated files
+*.pot
+*.mo
