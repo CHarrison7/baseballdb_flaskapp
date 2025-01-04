@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Home Page</h1>
+    {% if  team %}
+    <center>
+        {% for line in teamfranchise %}
+        <h1>{{line.franchName}} - {{year}}</h1>
+        {% endfor %}
+        <table border="1"><tr><th>Team ID</th><th>League</th><th>Division</th> <th>Rank</th> <th>Games</th> <th>Wins</th> <th>Losses</th> <th>Division Win</th> <th>Wild Card Win</th> <th>League Win</th> <th>World Series Win</th> </tr>
+        {% for line in team %}
+        <tr>
+            <td>{{line.teamID}}</td>
+            <td>{{line.lgID}}</td>
+            <td>{{line.div_ID}}</td>
+            <td>{{line.teamRank}}</td>
+            <td>{{line.G}}</td>
+            <td>{{line.W}}</td>
+            <td>{{line.L}}</td>
+            <td>{{line.DivWin}}</td>
+            <td>{{line.WCWin}}</td>
+            <td>{{line.LgWin}}</td>
+            <td>{{line.WSWin}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <table border="1"><tr><th>Player ID</th><th>Name</th> <th>Birthday</th> <th>Birth Place</th> <th>Batting Hand</th><th>Throwing Hand</th> </tr>
+            <h2>Players</h2>
+            {% for player in players %}
+            <tr>
+                <td>{{player.playerID}}</td>
+                <td>{{player.nameFirst}} {{player.nameLast}}</td>
+                <td>{{player.birthMonth}}/{{player.birthDay}}/{{player.birthYear}}</td>
+                <td>{{player.birthCity}}, {{player.birthState}}, {{player.birthCountry}}</td>
+                <td>{{player.bats}}</td>
+                <td>{{player.throws}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table border="1"><tr><th>Player ID</th><th>Stint #</th> <th>At Bats</th> <th>Runs</th> <th>Hits</th><th>Batting Avg</tr></tr>
+            <h2>Batters</h2>
+            {% for batters in battingPlayers %}
+            <tr>
+                <td>{{batters.playerID}}</td>
+                <td>{{batters.stint}}</td>
+                <td>{{batters.AB}}</td>
+                <td>{{batters.R}}</td>
+                <td>{{batters.H}}</td>
+                <td>{{batters.H}} / {{batters.AB}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+    </center>
+
+    {% endif %}
+{% endblock content %}

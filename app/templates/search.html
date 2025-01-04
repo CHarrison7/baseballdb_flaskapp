@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Player {{ title }} </h1>
+    {% if title == 'Search' %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.playerID.label }}<br>
+            {{ form.playerID(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+	{% if stats %}
+	    <center>
+            <table border="1"><tr><th>Name</th><th>Year</th><th>RC</th><th>RC27</th></tr>
+            {% for line in stats %}
+            <tr>
+                    <td>{{line.playerID}}</td>
+                    <td>{{line.yearID}}</td>
+                    <td>{{line.RC}}</td>
+                    <td>{{line.RC27}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            </center>
+	{% else %}
+	    <h3>No results found</h3>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

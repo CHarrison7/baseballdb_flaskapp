@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0   # Use the desired MySQL version
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # Root password
+      MYSQL_DATABASE: my_database         # Default database name
+      MYSQL_USER: user                    # Custom user name
+      MYSQL_PASSWORD: user        # Custom user password
+    ports:
+      - "3306:3306"                       # Map the container's MySQL port to the host
+    volumes:
+      - mysql-data:/var/lib/mysql         # Persist database data
+
+volumes:
+  mysql-data:

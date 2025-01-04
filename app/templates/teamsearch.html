@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if title == 'Team Search' %}
+        <div class="content-section">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Search Team Info</legend>
+                    <div class="form-group">
+                        {{ form.team.label() }}
+                        {{ form.team(class="form-control-file") }}
+                        {% if form.team.errors %}
+                            {% for error in form.team.errors %}
+                                <span class="text-danger">{{ error }}</span></br>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+
+    {% else %}
+        <center>
+            <table border="1"><tr><th>Name</th><th>Year</th><th>RC</th><th>RC27</th></tr>
+            {% for line in teamInfo %}
+            <tr>
+                <td>{{line.teamID}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        </center>
+
+    {% endif %}
+{% endblock content %}
