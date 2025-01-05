@@ -62,8 +62,7 @@ DB_ROOT_PASSWORD=<root user password for database>
 ```
 
 ### Step 6: Run sqlite database via docker-compose file
-
-#### You can change the environment variables for the database's properties/credentials in the docker-compose.yml file, if desired
+* You can change the environment variables for the database's properties/credentials in the docker-compose.yml file, if desired
 
 ```bash
 docker-compose up
