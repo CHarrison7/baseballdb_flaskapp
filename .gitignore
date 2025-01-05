@@ -8,6 +8,7 @@ __pycache__/
 # Virtual environment directories
 venv/
 env/
+.env
 bbapp/
 .flaskenv
 
