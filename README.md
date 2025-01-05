@@ -46,8 +46,8 @@ pip install -r requirements.txt
 
 Sample ".env" file:
 ```
-DB_ROOT_PASSWORD=defnotroot
-DB_USER_PASSWORD=defnotuser
+DB_ROOT_PASSWORD=notroot
+DB_USER_PASSWORD=notpassword
 ```
 
 Sample ".flaskenv" file:
@@ -61,9 +61,10 @@ SQLALCHEMY_DATABASE_URI=mysql+pymysql://<username>:<password>@<host>:<port>/<dat
 DB_ROOT_PASSWORD=<root user password for database>
 ```
 
-### Step 6: Run sqlite database via docker-compose file
+### Step 6: Run sqlite database with docker-compose file
 * You can change the environment variables for the database's properties/credentials in the docker-compose.yml file, if desired
 
+1. Start databse
 ```bash
 docker-compose up
 ```
@@ -74,3 +75,6 @@ Run the main Python script:
 python src/app.py
 ```
 
+### Credits:
+1. Sean Lahman for the baseball archive database. Find him [here](http://seanlahman.com)
+2. jknecht for the sqlite version of the database found [here](https://github.com/jknecht/baseball-archive-sqlite?tab=readme-ov-file)
